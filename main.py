@@ -19,16 +19,20 @@ class Application(fix.Application):
         print(f"Logout: {sessionID}")
 
     def toAdmin(self, message, sessionID):
-        print(f"To Admin: {message}")
+        msg = str(message).replace(chr(1), "^")
+        print(f"To Admin: {msg}")
 
     def fromAdmin(self, message, sessionID):
-        print(f"From Admin: {message}")
+        msg = str(message).replace(chr(1), "^")
+        print(f"From Admin: {msg}")
 
     def toApp(self, message, sessionID):
-        print(f"To App: {message}")
+        msg = str(message).replace(chr(1), "^")
+        print(f"To App: {msg}")
 
     def fromApp(self, message, sessionID):
-        print(f"From App: {message}")
+        msg = str(message).replace(chr(1), "^")
+        print(f"From App: {msg}")
 
     def send_order(self):
         order = fix42.NewOrderSingle()
