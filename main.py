@@ -2,8 +2,13 @@ import quickfix as fix
 
 
 class Application(fix.Application):
+    def __init__(self):
+        super().__init__()
+        self.sessionID = None
+
     def onCreate(self, sessionID):
         print(f"Session created: {sessionID}")
+        self.sessionID = sessionID
 
     def onLogon(self, sessionID):
         print(f"Logon: {sessionID}")
